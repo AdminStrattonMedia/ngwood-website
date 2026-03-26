@@ -177,7 +177,7 @@
       <a href="#delivery" class="nav-link">Delivery</a>
       <a href="#contact" class="nav-link">Contact</a>
     </div>
-    <a href="tel:+13058243222" class="btn-amber hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded text-sm">
+    <a href="#" onclick="showCallPopup(event)" class="btn-amber hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded text-sm">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 1.5H4.5L5.5 4.5L4 5.5C4.7 7 6 8.3 7.5 9L8.5 7.5L11.5 8.5V11C11.5 11.3 11.3 11.5 11 11.5C5.5 11.2 2.8 6.5 2.5 3C2.5 2.7 2.7 1.5 2 1.5Z" stroke="#111210" stroke-width="1.3" stroke-linejoin="round"/></svg>
       Call to Order
     </a>
@@ -213,7 +213,7 @@
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <a href="tel:+13058243222" class="btn-amber inline-flex items-center gap-2.5 px-8 py-4 rounded text-base">
+        <a href="#" onclick="showCallPopup(event)" class="btn-amber inline-flex items-center gap-2.5 px-8 py-4 rounded text-base">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 2H5.5L7 6L5 7.5C5.9 9.2 6.8 10.1 8.5 11L10 9L14 10.5V13.5C14 13.8 13.8 14 13.5 14C6.7 13.7 2.3 7.3 2 3C2 2.7 2.2 2 2.5 2Z" stroke="#111210" stroke-width="1.4" stroke-linejoin="round"/></svg>
           Call to Order
         </a>
@@ -523,7 +523,7 @@
     <!-- Call CTA -->
     <div class="mt-12 text-center reveal">
       <p class="mb-5" style="color:var(--muted);">Don't see what you need? We carry additional species — call to ask.</p>
-      <a href="tel:+13058243222" class="btn-amber inline-flex items-center gap-2.5 px-8 py-4 rounded text-base">
+      <a href="#" onclick="showCallPopup(event)" class="btn-amber inline-flex items-center gap-2.5 px-8 py-4 rounded text-base">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 2H5.5L7 6L5 7.5C5.9 9.2 6.8 10.1 8.5 11L10 9L14 10.5V13.5C14 13.8 13.8 14 13.5 14C6.7 13.7 2.3 7.3 2 3C2 2.7 2.2 2 2.5 2Z" stroke="#111210" stroke-width="1.4" stroke-linejoin="round"/></svg>
         Call to Check Stock
       </a>
@@ -779,7 +779,7 @@
           </div>
         </div>
 
-        <a href="tel:+13058243222" class="btn-amber inline-flex items-center gap-2.5 px-8 py-4 rounded text-base">
+        <a href="#" onclick="showCallPopup(event)" class="btn-amber inline-flex items-center gap-2.5 px-8 py-4 rounded text-base">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 2H5.5L7 6L5 7.5C5.9 9.2 6.8 10.1 8.5 11L10 9L14 10.5V13.5C14 13.8 13.8 14 13.5 14C6.7 13.7 2.3 7.3 2 3C2 2.7 2.2 2 2.5 2Z" stroke="#111210" stroke-width="1.4" stroke-linejoin="round"/></svg>
           Call Now to Order
         </a>
@@ -855,7 +855,7 @@
         <div class="font-heading font-900 text-white text-2xl mb-1" style="text-transform:uppercase;letter-spacing:-0.01em;">Always call before ordering</div>
         <p style="color:var(--muted);">Confirm stock, schedule delivery, and get wholesale pricing — all over the phone.</p>
       </div>
-      <a href="tel:+13058243222" class="btn-amber flex-shrink-0 inline-flex items-center gap-2.5 px-8 py-4 rounded text-base">
+      <a href="#" onclick="showCallPopup(event)" class="btn-amber flex-shrink-0 inline-flex items-center gap-2.5 px-8 py-4 rounded text-base">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 2H5.5L7 6L5 7.5C5.9 9.2 6.8 10.1 8.5 11L10 9L14 10.5V13.5C14 13.8 13.8 14 13.5 14C6.7 13.7 2.3 7.3 2 3C2 2.7 2.2 2 2.5 2Z" stroke="#111210" stroke-width="1.4" stroke-linejoin="round"/></svg>
         (305) 824-3222
       </a>
@@ -1106,7 +1106,31 @@
   </div>
 </footer>
 
+<!-- CALL POPUP MODAL -->
+<div id="call-modal" onclick="hideCallPopup()" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
+  <div onclick="event.stopPropagation()" style="background:#1a1916;border:1px solid rgba(200,135,58,0.35);border-radius:16px;padding:36px 40px;text-align:center;max-width:340px;width:90%;box-shadow:0 24px 80px rgba(0,0,0,0.7);">
+    <div style="width:52px;height:52px;background:rgba(200,135,58,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 3H8L10 8L7.5 9.5C8.9 12.3 11.7 15.1 14.5 16.5L16 14L21 16V20C21 20.6 20.6 21 20 21C10.6 20.5 3.5 12.4 3 4C3 3.4 3.4 3 4 3Z" stroke="#C8873A" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </div>
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(232,228,220,0.4);margin-bottom:8px;">NG Wood Supplies</div>
+    <a href="tel:+13058243222" style="display:block;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.2rem;letter-spacing:-0.01em;color:#C8873A;text-decoration:none;line-height:1;margin-bottom:6px;">(305) 824-3222</a>
+    <div style="font-size:0.8rem;color:rgba(232,228,220,0.4);margin-bottom:24px;">Tap the number to call</div>
+    <button onclick="hideCallPopup()" style="width:100%;padding:12px;background:rgba(200,135,58,0.1);border:1px solid rgba(200,135,58,0.25);border-radius:8px;color:rgba(232,228,220,0.6);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Close</button>
+  </div>
+</div>
+
 <script>
+  function showCallPopup(e) {
+    e.preventDefault();
+    const m = document.getElementById('call-modal');
+    m.style.display = 'flex';
+    requestAnimationFrame(() => m.style.opacity = '1');
+  }
+  function hideCallPopup() {
+    document.getElementById('call-modal').style.display = 'none';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') hideCallPopup(); });
+
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
